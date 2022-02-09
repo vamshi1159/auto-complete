@@ -1,3 +1,4 @@
+/* eslint-disable testing-library/no-node-access */
 import { screen,render, fireEvent } from "@testing-library/react";
 
 import '@testing-library/jest-dom';
@@ -20,7 +21,10 @@ describe('on change',()=>{
         render(<AutoComplete/>)
         const input=screen.getByRole('textbox')
         input.focus();
-        
+        fireEvent.change(document.activeElement, { target: { value: ['a','b','c'] } });
+      
+        expect(input.value).toContainEqual('c')
+        document.activeElement.blur();
     
     })
 })
