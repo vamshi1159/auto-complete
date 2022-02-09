@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
         color:'white'
     }
 })(Chip);
-export const AutoComplete = () => {
+export const AutoComplete = ({handleChange}) => {
     const classes=useStyles();
 
     const films=[
@@ -42,9 +42,7 @@ export const AutoComplete = () => {
         { title: 'Forrest Gump', year: 1994 },
         { title: 'Inception', year: 2010 }
     ];
-const handleChange=(e)=>{
-    console.log('clicked')
-}
+
      return <Autocomplete
         data-testid='id'
             multiple

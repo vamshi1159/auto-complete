@@ -16,7 +16,7 @@ describe('check autocomplete',()=>{
 })
 
 
-describe('on change',()=>{
+describe('on change state changed',()=>{
     test('event fired',()=>{
         render(<AutoComplete/>)
         const input=screen.getByRole('textbox')
